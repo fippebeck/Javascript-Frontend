@@ -1,0 +1,174 @@
+
+<!------ Include the above in your HEAD tag - 1 2 4 5 7 ---------->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Billigast och bäst på nätet">
+    <meta name="author" content="Filip Sandvall">
+    <meta name="generator" content="Ölnissen">
+    <title>Ölnissen - Din ölbutik på nätet</title>
+    <script src="https://use.fontawesome.com/9743e936da.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <link href="style/styleproductfilip.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="topbar">
+ <p>
+✓Gratis frakt över 499 kr&emsp;&emsp;&emsp;&emsp;
+✓Snabba trygga leveranser&emsp;&emsp;&emsp;&emsp;
+✓30 dagars öppet köp&emsp;&emsp;&emsp;&emsp;
+</p>
+      </div>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container-fluid">
+    <header>
+        <img class ="logo" src="logony1.png" alt="logo" margin-top="20px" height="85px">
+    </header>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+            <a class="nav-link" href="index.html">Hem</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blogg</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="products.html">Produkter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">Om oss</a>
+        </li>
+        <li class="nav-item">
+
+            <a class="nav-link" href="contact.html">Kontakta oss</a>
+          </li>
+      </ul>
+      
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" aria-hidden="true" data-bs-target="#cart">Cart (<span class="total-count"></span>)</button>
+
+      <div class = "socials">
+        <a href="#"><i class="fa-brands fa-square-facebook fa-3x"></i></a>
+        <a href="#"><i class="fa-brands fa-square-instagram fa-3x"></i></a>
+    </div>
+    <div class="search">
+        <form action="#">
+            <input type="text"
+                placeholder="Sök i hela butiken.."
+                name="search">
+            <button>
+                <i class="fa fa-search"
+                    style="font-size: 25px;">
+                </i>
+            </button>
+        </form>
+    </div>
+    </div>
+  </div>
+</nav>
+
+<main class="subhead">
+  <div class="bg-light p-5 rounded">
+    <div class = "bannertxt">
+        <h1>BREWDOG - ÖL</h1>
+        <p class="lead">Här köper du enkelt god öl online. Vi har ett stort utbud av både IPA och lager i många smaker – allt från fruktigt till klassiskt.</p>
+    </div>
+  </div>
+</main>
+
+
+<div class="container">
+    <h4 class="h4">Senaste nytt</h4>
+    <div class="row" id="filter">
+		<form>
+			<div class="form-group col-sm-3 col-xs-6">
+				<select data-filter="make" class="filter-make filter form-control">
+					<option value="">Välj storlek</option>
+					<option value="">Visa alla</option>
+				</select>
+			</div>
+			<div class="form-group col-sm-3 col-xs-6">
+				<select data-filter="model" class="filter-model filter form-control">
+					<option value="">Välj model</option>
+					<option value="">Visa alla</option>
+				</select>
+			</div>
+			<div class="form-group col-sm-3 col-xs-6">
+				<select data-filter="type" class="filter-type filter form-control">
+					<option value="">Välj färg</option>
+					<option value="">Visa alla</option>
+				</select>
+			</div>
+			<div class="form-group col-sm-3 col-xs-6">
+				<select data-filter="price" class="filter-price filter form-control">
+					<option value="">Sortera</option>
+					<option value="">Pris: lägst till högst</option>
+				</select>
+			</div>
+		</form>
+	</div>
+    <hr>
+    <div id="cards"></div>
+
+    <div id="row" class="row">
+
+            </div>
+
+
+
+    <div class="row">
+    
+        
+    </div>
+    </div>
+    <div class="loadmore">
+      <button onclick="loadmore();fetchData()" id="load" class="load" value="25" type="button">Ladda mer</button>
+    </div>
+<hr>
+
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="show-cart table">
+        <tr>
+        </tr>
+          
+        </table>
+        <div>Total price: $<span class="total-cart"></span></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Order now</button>
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+ <footer>
+    &copy; Ölnissen 2022 All rights reserved.
+ </footer>     
+ <script src="script.js"></script>
+ <script src="shop.js"></script>
+</body>
+</html>
