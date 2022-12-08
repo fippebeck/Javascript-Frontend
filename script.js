@@ -1,10 +1,11 @@
 
-var loadval = 25;
+var loadval = 1;
 
-var new1 = 25;
+var new1 = 1;
+i=1
 
 function loadmore(){
-    new1 = new1+25;
+    new1 = ++i;
 
     console.log(new1);
 }
@@ -12,7 +13,7 @@ function loadmore(){
 //hämtar data samt kör funktionen för att displaya den
 
 function fetchData() {
-  var url = 'https://api.punkapi.com/v2/beers?page=1&per_page=' + new1;
+  var url = 'https://api.punkapi.com/v2/beers?page=' + new1;
 fetch(url)
 .then(function (response) {
   return response.json();
@@ -80,10 +81,9 @@ function appendData(data) {
      divChild2.appendChild(social);
      social.appendChild(li1);
      li1.appendChild(link);
-     social.appendChild(li2);
      link.appendChild(bag);
      li2.appendChild(link2);
-     link2.appendChild(fav);
+
     
      const price = document.createElement("div");
      price.setAttribute("class", "price");
